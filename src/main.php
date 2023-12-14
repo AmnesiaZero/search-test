@@ -12,6 +12,8 @@ try {
     $book = new Books($client);
     $response = $book->search(['available' => 0,'search' => 'Политика']);
     tsEcho('Запрос к books с available=0,search=Политика - '.$response);
+    $response = $book->search(['available' => 1,'organization_id' => 2,'search' => 'Политика']);
+    tsEcho('Запрос к books с available=1,organization_id=2,search=Политика - '.$response);
     $audios = new Audios($client);
     $response = $audios->search(['search' => 'Смерть']);
     tsEcho('Запрос к audios с search = Смерть'.$response);
